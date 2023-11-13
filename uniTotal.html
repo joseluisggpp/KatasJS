@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>uniTotal</title>
+  </head>
+  <body>
+    <script>
+      //Función tradicional
+      function uniTotal(string) {
+        let ascii = 0;
+        for (let i = 0; i < string.length; i++) {
+          ascii += string.charCodeAt(i);
+        }
+        return ascii;
+      }
+      //Función flecha usando parámetros(string) y luego la expresión
+      let uniTotal2 = (string) => {
+        let ascii = 0;
+        for (let letra of string) {
+          ascii += letra.charCodeAt();
+        }
+        return ascii;
+      };
+      /*reduce es un método en JavaScript que se utiliza principalmente en arrays para "reducir" todos los elementos del array a un solo valor.
+        Toma una función de callback y un valor inicial como argumentos.
+
+        La función de callback recibe hasta cuatro parámetros:
+
+        Acumulador: El valor acumulado resultante de todas las operaciones anteriores o el valor inicial proporcionado.
+        Elemento actual: El elemento actual que se está procesando en el array.
+        Índice actual (opcional): La posición del elemento actual siendo procesado.
+        Array completo (opcional): El array al que pertenece el elemento actual.
+
+        La función de reduce realiza una operación sobre cada elemento del array utilizando el valor del acumulador y el elemento actual.
+        La idea es que el resultado de una iteración se utiliza en la siguiente. Al final, devuelve un único valor que puede ser de cualquier tipo (número, objeto, array, etc.).*/
+      //variable con nombre de la Función = parámetros  => Set,Array,Map o String .reduce(acumulador,índice) => operación que realiza en base a los elementos del Array,objeto,etc.
+      let uniTotal3 = (string) => string.split("").reduce((ascii, letra) => ascii + letra.charCodeAt(), 0); //Ponemos 0 para inicializar el acumulador (let ascii=0)
+
+      document.write(uniTotal("aa") + "<br>");
+      document.write(uniTotal2("aa") + "<br>");
+      document.write(uniTotal3("aa") + "<br>");
+    </script>
+  </body>
+</html>
